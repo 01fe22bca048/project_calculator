@@ -1,42 +1,27 @@
-import java.util.Scanner;
+import java.io.*;
+ 
+// Driver Class
+class addition {
+    public  float sum(float num1, float num2)
+    {
+        return num1+num2;
+    }
 
-public class Calculator {
-    public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        double num1, num2;
-        System.out.print("Enter first number: ");
-        num1 = scanner.nextDouble();
-        System.out.print("Enter second number: ");
-        num2 = scanner.nextDouble();
-        System.out.println("Select operation (+, -, *, /): ");
-        char operation = scanner.next().charAt(0);
+    public  float sub(float num1, float num2)
+    {
+        return num1-num2;
+    }
+     
+     
+      // main function
+    public static void main(String[] args)
+    {
+        float num1 = 10, num2 = 20, res = 0;
+        addition ob = new addition();
+        res = ob.sum(num1, num2);
+        System.out.println(res);
 
-        double result;
-
-        switch (operation) {
-            case '+':
-                result = num1 + num2;
-                System.out.println("Result: " + result);
-                break;
-            case '-':
-                result = num1 - num2;
-                System.out.println("Result: " + result);
-                break;
-            case '*':
-                result = num1 * num2;
-                System.out.println("Result: " + result);
-                break;
-            case '/':
-                if (num2 != 0) {
-                    result = num1 / num2;
-                    System.out.println("Result: " + result);
-                } else {
-                    System.out.println("Error! Division by zero is not allowed.");
-                }
-                break;
-            default:
-                System.out.println("Invalid operation!");
-        }
-        scanner.close();
+        res = ob.sub(num1, num2);
+        System.out.println(res);
     }
 }

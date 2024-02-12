@@ -1,48 +1,42 @@
-import java.util.*;
-public class calciii {
-    public static void main(String args[])
-    {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("........BASIC ARITHEMETIC OPERATIONS........");
+import java.util.Scanner;
 
-        System.out.print("Enter A : ");
-        int a = sc.nextInt();
+public class Calculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double num1, num2;
+        System.out.print("Enter first number: ");
+        num1 = scanner.nextDouble();
+        System.out.print("Enter second number: ");
+        num2 = scanner.nextDouble();
+        System.out.println("Select operation (+, -, *, /): ");
+        char operation = scanner.next().charAt(0);
 
-        System.out.print("Enter B : ");
-        int b = sc.nextInt();
+        double result;
 
-        System.out.println("Addition of two numbers = " + sum(a,b));
-
-        System.out.println("Product of two numbers = " + prod(a,b));
-
-        System.out.println("Division  of two numbers = " + div(a,b));
-
-        System.out.println("Difference  of two numbers = " + diff(a,b));
-
+        switch (operation) {
+            case '+':
+                result = num1 + num2;
+                System.out.println("Result: " + result);
+                break;
+            case '-':
+                result = num1 - num2;
+                System.out.println("Result: " + result);
+                break;
+            case '*':
+                result = num1 * num2;
+                System.out.println("Result: " + result);
+                break;
+            case '/':
+                if (num2 != 0) {
+                    result = num1 / num2;
+                    System.out.println("Result: " + result);
+                } else {
+                    System.out.println("Error! Division by zero is not allowed.");
+                }
+                break;
+            default:
+                System.out.println("Invalid operation!");
+        }
+        scanner.close();
     }
-
-    
-static float sum(float a , float b)
-    {
-        return a + b;
-    }
-
-   static float prod(float a , float b)
-    {
-        return a * b;
-    }
-
-    static float div(float a , float b)
-    {
-        return a  / b;
-    }
-
-   static  float diff(float a , float b)
-    {
-        return a  -  b;
-    }
-
-
-    
 }
-

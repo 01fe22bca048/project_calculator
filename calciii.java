@@ -1,26 +1,31 @@
-import java.io.*;
- 
-// Driver Class
-class calciii {
-    public float sum(float num1, float num2)
-    {
-        return num1 + num2;
-    }
+public class calciii {
+    public static void main(String[] args) {
+        // Predefined input values
+        int num1 = 10;
+        int num2 = 5;
 
-    public float sub(float num1, float num2)
-    {
-        return num1 - num2;
-    }
-     
-    // main function
-    public static void main(String[] args)
-    {
-        float num1 = 10, num2 = 20, res = 0;
-        calciii ob = new calciii();
-        res = ob.sum(num1, num2);
-        System.out.println(res);
+        // Addition
+        int sum = num1 + num2;
+        System.out.println("Addition: " + sum);
 
-        res = ob.sub(num1, num2);
-        System.out.println(res);
+        // Subtraction
+        int difference = num1 - num2;
+        System.out.println("Subtraction: " + difference);
+
+        // Multiplication
+        int product = num1 * num2;
+        System.out.println("Multiplication: " + product);
+
+        // Division
+        if (num2 != 0) {
+            double quotient = (double) num1 / num2;
+            System.out.println("Division: " + quotient);
+        } else {
+            System.out.println("Division by zero is undefined.");
+        }
+
+        // Modulus
+        int modulus = num1 % num2;
+        System.out.println("Modulus: " + modulus);
     }
 }
